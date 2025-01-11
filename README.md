@@ -70,12 +70,6 @@ Veri Analiz Otomasyonu, kullanıcıların temel ve ileri düzey veri analizlerin
 5. **Rapor Oluşturma:** Analiz sonuçlarını PDF rapor olarak indirin.
 6. **Tema Seçimi:** Uygulama temasını kişiselleştirin.
 
-## 📊 Örnek Grafik ve Tablolar
-| Grafik Türü     | Örnek                          |
-|-----------------|--------------------------------|
-| Çizgi Grafiği   | ![Line Chart](docs/line_chart.png) |
-| Pasta Grafiği   | ![Pie Chart](docs/pie_chart.png)   |
-| Histogram       | ![Histogram](docs/histogram.png)   |
 
 ## 🛠️ Projeye Katkıda Bulunma
 Katkılarınızı memnuniyetle karşılıyoruz! Lütfen aşağıdaki adımları izleyin:
@@ -97,17 +91,14 @@ Katkılarınızı memnuniyetle karşılıyoruz! Lütfen aşağıdaki adımları 
 ## 🔐 Güvenlik
 Bu proje kullanıcı verilerini ve dosyalarını güvenli bir şekilde saklamak için SHA-256 algoritmasını kullanır. Şifreler geri döndürülemez şekilde şifrelenir.
 
-## 📄 Lisans
-Bu proje [MIT Lisansı](LICENSE) kapsamında lisanslanmıştır.
-
 ## 📧 İletişim
 Herhangi bir sorunuz varsa, lütfen bizimle iletişime geçin:
-- **E-posta:** alaalsaid@example.com
-- **GitHub:** [GitHub Profiliniz](https://github.com/kullanici)
+- **E-posta:** elaseyitali2@gmail.com
+- **GitHub:** [Ela Seyitali]([https://github.com/kullanici](https://github.com/ela-seyitali))
 
 ---
 **Proje Geliştirici:** Ala Alsaid Ali
-**Danışmanlar:** Dr. Öğr. Üyesi V. Cem BAYDOĞAN, Arş. Gör. Hüseyin Alperen DAĞDÖGEN, Arş. Gör. Semra ÇELEBİ
+**Danışmanlar:** Dr. Öğr. Üyesi V. Cem BAYDOĞAN, Arş. Gör. Hüseyin Alperen DAĞDÖGEN
 
 Bu proje, Fırat Üniversitesi Teknoloji Fakültesi Yazılım Mühendisliği Bölümü'nde YMH219 Nesne Tabanlı Programlama dersi için geliştirilmiştir.
 
