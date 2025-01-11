@@ -1,0 +1,21 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="VeriAnalizOtomasyonu" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="LastTheme" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Varsayılan Tema</Value>
+    </Setting>
+    <Setting Name="ThemeBackColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">240, 240, 240</Value>
+    </Setting>
+    <Setting Name="ThemeForeColor" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Black</Value>
+    </Setting>
+    <Setting Name="setting" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ThemeName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">DevExpress Style</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

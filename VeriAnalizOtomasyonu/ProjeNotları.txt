@@ -1,0 +1,129 @@
+﻿                             Windowsform oluşturma notları
+
+ # properties: 
+    - start position : centerScrean
+
+
+ # toolbox: 
+    - groupBox >> formda bulunan toolları bir title altında toplanıp hepsini bir araya gitirmek
+    ve tek bir tool olarak görüntülemek
+    - panel >> groupBox ile tek farkı belirli bir title altında yazılmaz.
+    menuStrep >> visual studio üst kısmında bulunan menular gibi (örneğin: file, edit, view...)
+    - toolStrep >> visual studio üst kısmında bulunan file menusunu tıkladığımızda çıkan alt 
+    menular gibi
+    - saveFileDialog >> kullanıcı kendi dosyasını kaydedecekse kullanılır
+
+   NOT: İlk önce hangi formun çalışması gerektiğini belirlemek için önce solution explorer 
+    açarız, sonra program.cs dosyasına çift tıklıyoruz, ardından main metodu içerisinde yazılan
+    Application.Run(new Form1()); satırındaki hangi formu ilk olarak başlatılması istediğimizi
+    yazarız. örneğin;  Application.Run(new girişFormu()); bu şekilde ilk olarak Form1 değil de
+    girişFormu çalıştırılacaktır. 
+
+
+    # code syntax:
+    - MessageBox.show(""); // kullanıcıya bir box (küçük form) üzerinden istediğimiz mesajı gösterir
+    -  private void SistemeGirBtn_Click(object sender, EventArgs e)
+        {
+            girişFormu gfrm =  new girişFormu();
+            gfrm.ShowDialog(); 
+        }
+      /*  SistemeGirBtn_Click bu event Form1de bulunur. SistemeGirBtn'tıkladığımızda body kısmındaki
+olaylar gerçekleşir. yukarıdaki örnekte gfrm adlı bir nesneyi girişFormundan oluşturduk, ardından
+nesne üzerinden ShowDialog(); metodunu kullanarak SistemeGirBtn butonuna tıkladığımızda direk 
+girişFormu bize gösterilir. iki farklı gösterim türü vardır.
+1)  gfrm.ShowDialog(); bu metodu kullandığımızda açılacak formu kapatmadan ya da içerisindeki işlemler
+bitmeden hiç bir şey yapamıyoruz. örneğin esas forma bile tıklayamıyoruz.
+2)  gfrm.Show(); bu metod kullanıldığında ise form dışında her hangi bir işlemi yapmak ya da 
+her hangi bir formu açmak mümkündür. ayrıca SistemeGirBtn butonuna her tıkladığımızda body kısmında
+belirlenen form tekrar tekrar yenisi açılır. 
+      */
+
+
+
+      /*
+      GEÇİCİ NOT:
+      arayüz tasarımını yapmaktayım. genel olarak nasıl olması gerektiğini kağıt üzerinde yazdım. 
+      yapılabilecek analiz ve işlemleri belirleyip onları gruplandırmam gerekiyor. ardından bu grupları
+      main arayüzde çizerek tasarımını tam olarak yapmalıyım. 
+      bunu yaptıktan sonra, main formundan hangi formlara geçebileceğini de düşünüp o formları tasarlamam
+      gerekiyor. 
+      
+      */
+      **********************************************************************************************
+
+                                            GİRİŞ FORMU NOTLARI: 
+
+      giriş formunda bulunan üye ol butonuna tıklandığında kullanıcıya message box gösterilmeli (başarıyla
+      üye oluşturulup ouluşturulmadığına dair) başarılı ise ana sayfaya tekrar yönlendirsin. sonra kullanıcı 
+      isterse uygulamaya giriş yapar. 
+
+
+
+      next question:
+
+      ama bu kodu çalıştırdığımda AykırıDeğerItem ve IQRItem aynı sonucu veriyor!!!!!!!!!! bunu neden 
+      düzenlemedim böyle bir hatayı nasıl yapabilirsin? bunların arasındaki farkı bilmiyor musun yoksa??!
+      bunlar farklı sonuçlar vermeli! ikisi aynı sonucu veriyorsa program çok anlamsız olur
+      
+
+      ************************************** 29/12/2024 ******************************************
+
+
+      en son iki tane class ekledim. biri veritabnı işlemlerini yapacak olan class, diğeri ise 
+      görselleştirme classıdır. veritabnı classı  içerisinde şimdilik kullanıcının giridiği veri setini
+      veri tabanı üzerinde bir metod kullanarak saklıyoruz. başka metodlar da vardır. 
+      görselleştirme classı ise veri tabanı classı içerisindeki verileri görselleştirmek için kullanılır.
+      ancak kodu çalıştırdığımda veri setini yükledikten sonra database is locked hatasını alıyorum.
+      yarın kodu hocaya gösermeden önce bu hatayı çözmeliyim.
+      ayrıca diğer dosyaların içerisindeki metodları ve olayları iyice anlamam ve düzenlemem gerekiyor.
+      özellikle mainForm.cs dosyasındaki kodlar çok karmaşık olduğu için bu kısımda OOP konseptini uygulamam gerek.
+
+      ************************************** 2/1/2025 ************************************************
+
+      ************************** mainForm.cs dosyasındaki metodlar ve olaylar ************************
+
+1.	mainForm(int userId)
+2.	mainForm_Load(object sender, EventArgs e)
+3.	VeriSetiYükle_btn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+4.	veriSetiniGörüntüle_btn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+5.	TahminEdilenVeriTipi(DataColumn column)
+6.	GetNumericalColumns()
+7.	SelectColumnsForAnalysis(List<string> availableColumns, string formTitle)
+8.	CalculateIQRForColumns(List<string> selectedColumns)
+9.	CalculateOutliersForColumns(List<string> selectedColumns)
+10.	ShowIQROnlyResults(Dictionary<string, (double Q1, double Q3, double IQR)> iqrResults)
+11.	ShowOutlierResults(Dictionary<string, (double Q1, double Q3, double IQR, List<double> Outliers)> outlierResults)
+12.	ShowOutliers(string columnName, List<double> outliers)
+13.	VarsayılanAnalizler_btn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+14.	barchartItem_Click_1(object sender, EventArgs e)
+15.	pastGrafiğiItem_Click_1(object sender, EventArgs e)
+16.	YÇGrafiğiItem_Click(object sender, EventArgs e)
+17.	çizgiGrafiğiItem_Click(object sender, EventArgs e)
+18.	histogramChItem_Click(object sender, EventArgs e)
+19.	boxPlotItem_Click(object sender, EventArgs e)
+20.	radarChItem_Click(object sender, EventArgs e)
+21.	ekranıTemizle_btn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+22.	satırSayısıItem_Click_1(object sender, EventArgs e)
+23.	sütunSayısıItem_Click(object sender, EventArgs e)
+24.	sütunİsimleriItem_Click_1(object sender, EventArgs e)
+25.	sütunVeriTipiItem_Click(object sender, EventArgs e)
+26.	nullVeriSayısıItem_Click_1(object sender, EventArgs e)
+27.	ortalamaItem_Click_1(object sender, EventArgs e)
+28.	MedyanItem_Click(object sender, EventArgs e)
+29.	modItem_Click(object sender, EventArgs e)
+30.	standartSapmaItem_Click_1(object sender, EventArgs e)
+31.	VaryansItem_Click_1(object sender, EventArgs e)
+32.	minMaxItem_Click_1(object sender, EventArgs e)
+33.	IQRItem_Click(object sender, EventArgs e)
+34.	AykırıDeğerItem_Click_1(object sender, EventArgs e)
+35.	NullVeriDoldurItem_Click(object sender, EventArgs e)
+36.	başkaHesabaGirişYap_btn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+37.	çıkışYap_btn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+38.	uygulamayıKapat_btn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+39.	ÇubukGrafiği_item_Click(object sender, EventArgs e)
+40.	ÇizgiGrafiği_item_Click(object sender, EventArgs e)
+41.	PastaGrafiği_item_Click(object sender, EventArgs e)
+42.	DağılımGrafiği_item_Click(object sender, EventArgs e)
+43.	AlanGrafiği_item_Click(object sender, EventArgs e)
+44.	Histogram_item_Click(object sender, EventArgs e)
+45.	görselleştirmePanel_Paint(object sender, PaintEventArgs e)
